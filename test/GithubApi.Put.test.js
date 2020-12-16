@@ -38,7 +38,7 @@ describe('Github Api Test', () => {
           expect(followedUser.login).to.equal(githubUserName);
         });
       });
-      
+
       describe(`When a PUT request is used to follow ${githubUserName} again so we test the method is idempotent`, () => {
         let followResponse;
         before(async () => {
