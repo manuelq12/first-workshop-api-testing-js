@@ -10,4 +10,4 @@ extends:
 rules:
   "comma-dangle": ["error", "never"]
   linebreak-style: ["error", "unix"]
-  
+
