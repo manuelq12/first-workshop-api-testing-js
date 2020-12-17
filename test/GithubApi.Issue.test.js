@@ -8,9 +8,9 @@ const urlBase = 'https://api.github.com';
 
 describe('Github Api Test', () => {
   describe('Scenario: Creating Issues', () => {
-    describe('Given our Github account', () => {
+    describe('Given a Github account', () => {
       let userInfo;
-      describe('When a GET request is used to retrieve our information', () => {
+      describe('When a GET request is used to retrieve the account information', () => {
         before(async () => {
           userInfo = await agent.get(`${urlBase}/user`)
             .auth('token', process.env.ACCESS_TOKEN)
@@ -23,7 +23,8 @@ describe('Github Api Test', () => {
           expect(userInfo.body.public_repos).to.be.at.least(1);
         });
       });
-      describe('When a GET request is used to retrieve our repository information', () => {
+
+      describe('When a GET request is used to retrieve the accounts repository information', () => {
         let response;
         let repository;
         before(async () => {
@@ -39,7 +40,7 @@ describe('Github Api Test', () => {
           expect(repository.full_name).to.not.equal('undefined');
         });
 
-        describe('When a POST request is used to create an issue in our repository', () => {
+        describe('When a POST request is used to create an issue in the accounts repository', () => {
           const query = {
             title: 'API Created Issue'
           };
@@ -56,7 +57,8 @@ describe('Github Api Test', () => {
             expect(issueResponse.body.title).to.equal(query.title);
             expect(issueResponse.body.body).to.equal(null);
           });
-          describe('When a PATCH request is used to update the issue in our repository', () => {
+          
+          describe('When a PATCH request is used to update the issue in the accounts repository', () => {
             const Updatequery = {
               body: 'API Created Issue new body'
             };
@@ -66,7 +68,7 @@ describe('Github Api Test', () => {
                 .set('User-Agent', 'agent');
             });
 
-            it('Then the issue should have been created', () => {
+            it('Then the issue should have been updated', () => {
               expect(response.status).to.equal(statusCode.OK);
               expect(response.body.title).to.equal(query.title);
               expect(response.body.body).to.equal(Updatequery.body);
