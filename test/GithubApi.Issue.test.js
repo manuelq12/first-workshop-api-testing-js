@@ -57,7 +57,7 @@ describe('Github Api Test', () => {
             expect(issueResponse.body.title).to.equal(query.title);
             expect(issueResponse.body.body).to.equal(null);
           });
-          
+
           describe('When a PATCH request is used to update the issue in the accounts repository', () => {
             const Updatequery = {
               body: 'API Created Issue new body'
