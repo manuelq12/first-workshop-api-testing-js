@@ -13,7 +13,12 @@ const listPublicEventsSchema = {
             type: 'string'
           },
           type: {
-            type: 'string'
+            type: 'string',
+            enum: ['PushEvent', 'PullRequestEvent', 'PublicEvent',
+              'CommitCommentEvent', 'MemberEvent', 'CreateEvent',
+              'DeleteEvent', 'PullRequestReviewCommentEvent',
+              'IssueCommentEvent', 'WatchEvent', 'IssuesEvent',
+              'ForkEvent', 'GollumEvent', 'PublicEvent']
           },
           public: {
             type: 'boolean'
