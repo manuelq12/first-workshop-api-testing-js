@@ -18,7 +18,7 @@ const listPublicEventsSchema = {
               'WatchEvent', 'PushEvent', 'PullRequestReviewCommentEvent',
               'DeleteEvent', 'PullRequestEvent', 'IssuesEvent',
               'ReleaseEvent', 'ForkEvent', 'GollumEvent',
-              'PublicEvent','MemberEvent']
+              'PublicEvent', 'MemberEvent']
           },
           public: {
             type: 'boolean'
