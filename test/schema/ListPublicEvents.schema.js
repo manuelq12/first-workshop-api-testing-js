@@ -17,7 +17,7 @@ const listPublicEventsSchema = {
             enum: ['IssueCommentEvent', 'CreateEvent', 'PullRequestReviewEvent',
               'WatchEvent', 'PushEvent', 'PullRequestReviewCommentEvent',
               'DeleteEvent', 'PullRequestEvent', 'IssuesEvent',
-              'ReleaseEvent']
+              'ReleaseEvent', 'ForkEvent', 'GollumEvent']
           },
           public: {
             type: 'boolean'
